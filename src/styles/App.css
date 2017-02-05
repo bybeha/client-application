@@ -1,0 +1,112 @@
+/* Base Application Styles */
+body {
+  color: #484848;
+  background: #fafafa;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list__item {
+  position: relative;
+  border-radius: 0.15em;
+  margin: 1.5em 1em;
+  padding: 2em 3em;
+  max-width: 480px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0.3em 1em hsla(0, 0%, 50%, 0.3);
+}
+
+input,
+textarea {
+  outline: none;
+  width: 100%;
+  margin: 0.8em 0;
+  line-height: 2.5;
+  padding: 0 1em;
+  color: hsla(0, 0%, 20%, 0.8);
+  border: 1px solid hsla(0, 0%, 50%, 0.1);
+  transition: border 0.3s ease-in, color 0.25s ease-in;
+
+  &:active {
+    color: hsla(0, 0%, 20%, 0.95);
+    border-color: hsla(0, 0%, 50%, 0.5);
+  }
+}
+
+input:focus,
+textarea:focus {
+  color: hsla(0, 0%, 25%, 0.95);
+  border: 1px solid hsla(0, 0%, 50%, 0.8);
+}
+
+.btn-add {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 65px;
+  height: 65px;
+  font-size: 2em;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  background: #009688;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0.3em 0.5em hsla(0, 0%, 20%, 0.3);
+}
+
+.btn-remove {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  color: #808080;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-remove::before,
+.btn-remove::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 50%;
+  background-color: hsla(0, 0%, 30%, 0.6);
+  transition: background-color 0.3s ease-in;
+  transform-origin: center center;
+}
+
+.btn-remove:hover::before,
+.btn-remove:hover::after {
+  background-color: hsla(0, 0%, 10%, 0.9);
+}
+
+.btn-remove::before {
+  transform: rotate(45deg);
+}
+
+.btn-remove::after {
+  margin-top: -2px;
+  transform: rotate(-45deg);
+}
